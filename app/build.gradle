@@ -6,11 +6,15 @@ plugins {
 android {
     compileSdk 31
 
+    def versionMajor = 0
+    def versionMinor = 1
+    def versionPatch = 0
+
     defaultConfig {
         minSdk 24
         targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        versionCode versionMajor * 10000 + versionMinor * 100 + versionPatch
+        versionName "$versionMajor.$versionMinor.$versionPatch"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
