@@ -1,4 +1,4 @@
-package dk.jdc.koalalog
+package io.github.naxx1000.koalalog
 
 import android.annotation.SuppressLint
 import android.app.ActivityManager

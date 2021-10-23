@@ -1,4 +1,4 @@
-package dk.jdc.koalalog
+package io.github.naxx1000.koalalog
 
 import android.os.Bundle
 import android.text.Html
@@ -13,6 +13,7 @@ import androidx.core.view.postDelayed
 class LogActivity : AppCompatActivity() {
 
     private lateinit var logTextView: TextView
+    private lateinit var titleTextView: TextView
     private lateinit var logScrollView: ScrollView
     private lateinit var btnClear: ImageButton
 
@@ -21,6 +22,7 @@ class LogActivity : AppCompatActivity() {
         setContentView(R.layout.activity_log)
 
         logTextView = findViewById(R.id.tv_log)
+        titleTextView = findViewById(R.id.tv_title)
         logScrollView = findViewById(R.id.sv_log)
         btnClear = findViewById(R.id.btn_clear)
 
@@ -47,10 +49,11 @@ class LogActivity : AppCompatActivity() {
         val showFullLog = intent.getBooleanExtra("full_log", false)
 
         val command = if (tag == "FATAL") {
+            titleTextView.text = getString(R.string.title_crash)
             "logcat *:E -v time -d --pid=$pid"
         } else {
+            titleTextView.text = if (showFullLog) "App log" else tag ?: ""
             "logcat ${if (!showFullLog) "-s $tag:D ${tag?.replace("Fragment", "ViewModel")}:D" else ""} -v time -d --pid=$pid"
-//            "logcat ${if (!showFullLog) "$tag:D *:S" else ""} -v time -d --pid=$pid"
         }
 
         val process =

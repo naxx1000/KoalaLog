@@ -1,4 +1,4 @@
-package dk.jdc.koalalog
+package io.github.naxx1000.koalalog
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

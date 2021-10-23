@@ -2,7 +2,9 @@
 <resources>
 
     <color name="grey700">#353737</color>
+    <color name="grey600">#484848</color>
     <color name="yellow300">#C7A75A</color>
     <color name="red300">#FF6A6A</color>
+    <color name="grey50">#D8D8D8</color>
 
 </resources>

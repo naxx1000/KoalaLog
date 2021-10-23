@@ -1,7 +1,7 @@
-package dk.jdc.koalalog.extensions
+package io.github.naxx1000.koalalog.extensions
 
 import android.app.Application
-import dk.jdc.koalalog.KoalaLog
+import io.github.naxx1000.koalalog.KoalaLog
 
 fun Application.koalaInit() {
     KoalaLog.init(baseContext)
